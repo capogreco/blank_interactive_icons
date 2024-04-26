@@ -17,25 +17,36 @@
     </head>
 
     <body>
-
         <div class="row">
-            <div class="image-container"><img src="img/cir.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/tri.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/squ.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/0.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/1.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/2.png" height="200" width="200"/></div>
         </div>
 
         <div class="row">
-            <div class="image-container"><img src="img/hex.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/rec.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/sta.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/3.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/4.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/5.png" height="200" width="200"/></div>
             </div>
 
         <div class="row">
-            <div class="image-container"><img src="img/trr.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/sqr.png" height="200" width="200"/></div>
-            <div class="image-container"><img src="img/her.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/6.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/7.png" height="200" width="200"/></div>
+            <div class="image-container"><img src="images/original/8.png" height="200" width="200"/></div>
         </div>
-        
     </body>
-    
 </html>
+
+<script>
+    const icon_elements = Array.from (document.getElementsByTagName (`img`))
+    icon_elements.forEach ((element, index) => {
+        const audio = new Audio (`sounds/${ index }.mp3`)
+        element.onpointerover = () => {
+            element.src = `images/changed/${ index }.png`
+        }
+        element.onpointerleave = () => {
+            element.src = `images/original/${ index }.png`
+        }
+        element.onpointerdown = () => audio.play ()
+    })
+</script>
