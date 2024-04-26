@@ -38,6 +38,10 @@
 </html>
 
 <script>
+
+    document.body.style.backgroundColor = `tomato`
+    // document.body.style.backgroundColor = `hsl(180, 50%, 50%)`
+
     const icon_elements = Array.from (document.getElementsByTagName (`img`))
     icon_elements.forEach ((element, index) => {
         const audio = new Audio (`sounds/${ index }.mp3`)
